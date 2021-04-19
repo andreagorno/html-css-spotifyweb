@@ -1,0 +1,242 @@
+/* dubug */
+footer {
+    height: 100px;
+    background-color: lightgreen;
+}
+/* /dubug */
+
+/* common */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+/* /common */
+.wrapper {
+    height: 100%;
+}
+/* main */
+main {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+/* aside */
+aside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: #6D6D6D;
+}
+/* logo */
+.logo {
+    padding: 20px 10px;
+}
+#logo {
+    width: 90%;
+}
+#small-logo {
+    display: none;
+}
+
+/* nav-bar */
+.nav-bar {
+    padding: 20px 10px;
+    color: #6D6D6D;
+}
+.nav-bar img {
+    height: 30px;
+    color: #6D6D6D;
+}
+
+.text {
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: bold
+}
+.nav-home .text {
+    color: white;
+}
+
+/* playlist */
+#playlist {
+    height: 60%;
+    padding: 20px 10px;
+}
+
+#playlist h2 {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}   
+
+div.scrollmenu {
+    height: 60%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #6D6D6D;
+}
+
+#playlist div {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#playlist span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #6D6D6D;
+}
+
+#playlist i {
+    color: black;
+    font-size: 20px;
+}
+
+/* profile */
+#profile {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.download-app img {
+    height: 15px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.download-app .text {
+    font-size: 14px;
+}
+
+.log-in img {
+    height: 25px;
+    color: #6D6D6D;
+    background-color: #6D6D6D;
+    border-radius: 50%;
+    padding: 0 2px;
+}
+
+.log-in .text {
+    color: white;
+}
+
+.download-app::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #6D6D6D;
+    background-color: #6D6D6D;
+}
+
+/* section */
+#section {
+    display: inline-block;
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: #141922;
+}
+
+#upgrade {
+    height: 100px;
+    line-height: 100px;
+    background-color: #080B12;
+    text-align: right;
+}
+#upgrade span {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+
+@media all and (max-width:600px) {
+    
+    aside {
+        width: 60px;
+    }
+
+    #logo {
+        display: none;
+    }
+    #small-logo {
+        display: block;
+        width: 80%;
+        margin: 5px 10%;
+    }
+    .nav-bar {
+        text-align: center;
+    }
+    .nav-bar img {
+        width: 80%;
+        margin: 5px 0;
+    }
+    .text {
+        display: none;
+    }
+
+    #playlist {
+        display: none;
+    }
+
+    #profile {
+        text-align: center;
+    }
+    .download-app::after {
+        display: none;
+    }
+    .download-app img {
+        margin-bottom: 15px;
+        height: 20px;
+    }
+    
+
+    #section {
+        width: calc(100% - 60px);
+    }
+
+}
+
+@media all and (max-height:640px) {
+    
+    #profile {
+        display: none;
+    }
+
+}
+
+/* /main */
+
+/* footer */
+
+/* footer */
