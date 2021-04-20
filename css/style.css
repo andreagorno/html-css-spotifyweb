@@ -1,9 +1,3 @@
-/* dubug */
-footer {
-    height: 100px;
-    background-color: lightgreen;
-}
-/* /dubug */
 
 /* common */
 * {
@@ -14,7 +8,8 @@ footer {
 }
 /* /common */
 .wrapper {
-    height: 100%;
+    width: 100%;
+    height: 100vh;
 }
 /* main */
 main {
@@ -24,18 +19,17 @@ main {
 
 /* aside */
 aside {
-    display: flex;
-    flex-direction: column;
-    position: relative;
     width: 200px;
-    height: 100%;
-    overflow: hidden;
     background-color: black;
     color: #6D6D6D;
+    display: flex;
+    flex-direction: column;
 }
+
 /* logo */
 .logo {
-    padding: 20px 10px;
+    margin: 10px;
+    overflow: hidden;
 }
 #logo {
     width: 90%;
@@ -46,8 +40,10 @@ aside {
 
 /* nav-bar */
 .nav-bar {
-    padding: 20px 10px;
+    flex-shrink: 1;
+    margin: 10px;
     color: #6D6D6D;
+    overflow: hidden;
 }
 .nav-bar img {
     height: 30px;
@@ -67,8 +63,9 @@ aside {
 
 /* playlist */
 #playlist {
-    height: 60%;
-    padding: 20px 10px;
+    margin: 10px;
+    flex-shrink: 1;
+    overflow: hidden;
 }
 
 #playlist h2 {
@@ -76,15 +73,18 @@ aside {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-}   
-
-div.scrollmenu {
-    height: 60%;
-    overflow: auto;
-    white-space: nowrap;
 }
 
-div.scrollmenu a {
+.scrollmenu {
+    /* height: 80%; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+.scrollmenu a {
     display: block;
     padding: 10px 0;
     font-size: 14px;
@@ -93,7 +93,7 @@ div.scrollmenu a {
     color: #6D6D6D;
 }
 
-#playlist div {
+#playlist .create_new {
     font-size: 16px;
     margin: 10px 0;
     font-weight: bold;
@@ -116,10 +116,9 @@ div.scrollmenu a {
 /* profile */
 #profile {
     background-color: black;
-    position: absolute;
-    bottom: 0;
+    height: 80px;
     width: 100%;
-    padding: 20px 10px;
+    padding: 0 10px;
 }
 
 .download-app img {
@@ -155,15 +154,17 @@ div.scrollmenu a {
 
 /* section */
 #section {
-    display: inline-block;
     width: calc(100% - 200px);
-    height: 100%;
     color: white;
     background-color: #141922;
     overflow: auto;
 }
 /* upgrade banner */
 #upgrade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 200px);
     height: 100px;
     line-height: 100px;
     background-color: #080B12;
@@ -183,7 +184,7 @@ div.scrollmenu a {
 
 /* nav-menu */
 .list-inline {
-    margin-top: 20px;
+    margin-top: 150px;
     list-style: none;
     text-align: center;
 }
@@ -262,6 +263,123 @@ div.scrollmenu a {
     border-radius: 50%;
 }
 
+/* footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: #282828;
+}
+.song_name,
+.song_volume {
+    display: flex;
+    width: 200px;
+    height: 100%;
+}
+
+.song_minute {
+    width: 40%;
+    height: 100%;
+}
+
+/* song name start */
+.song_name_left {
+    display: flex;
+    height: 100px;
+    padding: 25px 10px;
+}
+.song_name_left img {
+    height: 50px;
+}
+
+.song_name_center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100px;
+}
+.song_name_center span {
+    color: #6D6D6D;
+    font-weight: bold;
+    font-size: 10px;
+}
+.song_name_center span:first-child {
+    color: white;
+    font-size: 16px;
+}
+
+.song_name_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+}
+.song_name_right i {
+    margin: 0 6px;
+    font-size: 15px;
+    color: #6D6D6D;
+}
+
+/* song_minute */
+.song_minute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.song_minute_buttons {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.song_minute_buttons i {
+    margin: 0 10px;
+    color: white;
+    font-size: 16px;
+}
+.song_minute_buttons i:nth-child(3) {
+    font-size: 34px;
+}
+
+.song_minute_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+}
+.song_minute_bar #volume {
+    display: inline-block;
+    width: 70%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: grey;
+    margin: 0 10px;
+}
+.song_minute_bar span {
+    color: white;
+    font-size: 10px;
+}
+
+/* song_volume  */
+.song_volume {
+    justify-content: center;
+    align-items: center;
+}
+.song_volume i {
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+}
+.song_volume #volume_small {
+    display: inline-block;
+    width: 70px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: grey;
+}
 /* media query */
 @media all and (max-width:1200px) and (min-width:800px) {
     
@@ -275,6 +393,31 @@ div.scrollmenu a {
 
     .album {
         width: calc(100% / 2);
+    }
+
+    .song_name_right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+
+    .song_name_right i {
+        margin: 3px 10px;
+        font-size: 15px;
+        color: #6D6D6D;
+    }
+
+    .song_name_center {
+        flex-grow: 0;
+    }
+
+    .song_volume #volume_small {
+        width: 50px;
+    }
+    .song_volume i {
+        margin: 0 5px;
     }
 
 }
@@ -295,6 +438,7 @@ div.scrollmenu a {
     }
     .nav-bar {
         text-align: center;
+        flex-grow: 1;
     }
     .nav-bar img {
         width: 80%;
@@ -305,6 +449,9 @@ div.scrollmenu a {
     }
 
     #playlist {
+        display: none;
+    }
+    .scrollmenu {
         display: none;
     }
 
@@ -324,18 +471,16 @@ div.scrollmenu a {
         width: calc(100% - 60px);
     }
 
+    #upgrade {
+        width: calc(100% - 60px);
+    }
+
 }
 
-@media all and (max-height:640px) {
+@media all and (max-height:600px) {
     
     #profile {
         display: none;
     }
 
 }
-
-/* /main */
-
-/* footer */
-
-/* footer */
