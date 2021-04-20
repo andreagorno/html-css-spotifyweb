@@ -61,6 +61,12 @@ aside {
     color: white;
 }
 
+.text:hover,
+.scrollmenu a:hover,
+#playlist .create_new:hover {
+    cursor: pointer;
+    color: white;
+}
 /* playlist */
 #playlist {
     margin: 10px;
@@ -106,6 +112,9 @@ aside {
     width: 40px;
     height: 40px;
     background-color: #6D6D6D;
+}
+#playlist:hover span {
+    background-color: white;
 }
 
 #playlist i {
@@ -167,8 +176,9 @@ aside {
     width: calc(100% - 200px);
     height: 100px;
     line-height: 100px;
-    background-color: #080B12;
+    background-color: rgba(8, 11, 18, 0.5);
     text-align: right;
+    z-index: 111;
 }
 #upgrade span {
     display: inline-block;
@@ -180,6 +190,11 @@ aside {
     color: white;
     border: 1px solid white;
     border-radius: 20px;
+}
+#upgrade span:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    transform: scale(1.1, 1.1);
 }
 
 /* nav-menu */
@@ -210,6 +225,10 @@ aside {
     width   : 40%;  /* or 100px */
     border-bottom:2px solid #ADFF2F;
 }
+.list-inline li:hover {
+    cursor: pointer;
+    color: white;
+}
 
 /* recently played */
 .clearfix::after {
@@ -229,9 +248,32 @@ aside {
     padding: 20px 20px 10px 20px;
     text-align: center;
 }
-.album img {
+
+.portfolio_item {
+    position: relative;
+}
+.portfolio_item img {
     width: 100%;
 }
+.portfolio_item i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: white;
+    font-size: 48px;
+}
+.portfolio_item:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.portfolio_item:hover img {
+    opacity: 0.5;
+}
+.portfolio_item:hover i {
+    opacity: 1;
+}
+
 .subtitle_1 {
     margin: 10px 0;
     font-size: 16px;
@@ -305,6 +347,11 @@ footer {
     font-weight: bold;
     font-size: 10px;
 }
+.song_name_center span:hover:not(span:first-child) {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
 .song_name_center span:first-child {
     color: white;
     font-size: 16px;
@@ -321,6 +368,10 @@ footer {
     margin: 0 6px;
     font-size: 15px;
     color: #6D6D6D;
+}
+.song_name_right i:hover {
+    color: white;
+    cursor: pointer;
 }
 
 /* song_minute */
@@ -352,12 +403,43 @@ footer {
 }
 .song_minute_bar #volume {
     display: inline-block;
+    position: relative;
     width: 70%;
     height: 5px;
     border-radius: 10px;
     background-color: grey;
     margin: 0 10px;
 }
+.minute_exact {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+.minute_exact:hover {
+    background-color: #1DB954;;
+}
+.volume_circle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translateY(-5px);
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: white;
+}
+#volume:hover .volume_circle,
+#volume_small:hover .volume_circle {
+    opacity: 1;
+}
+
 .song_minute_bar span {
     color: white;
     font-size: 10px;
@@ -375,6 +457,7 @@ footer {
 }
 .song_volume #volume_small {
     display: inline-block;
+    position: relative;
     width: 70px;
     height: 5px;
     border-radius: 10px;
