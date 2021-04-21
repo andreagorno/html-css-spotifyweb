@@ -16,15 +16,20 @@
 
         <title>My Spotify</title>
     </head>
+
     <body>
         <div class="wrapper">
                 <main>
+                    <!-- aside start -->
                     <aside>
+                        <!-- spotify logo start -->
                         <div class="logo">
                             <img src="img/logo.svg" alt="logo" id="logo">
                             <img src="img/logo-small.svg" alt="logo_small" id="small-logo">
                         </div>
-                        
+                        <!-- /spotify logo start -->
+
+                        <!-- nav-bar start -->
                         <div class="nav-bar">
                             <div class="nav-home">
                                 <img src="img/home.svg" alt="home">
@@ -45,10 +50,12 @@
                                 </div>
                             </div>
                         </div>
-        
+                        <!-- /nav-bar start -->
+
+                        <!-- playlist start -->
                         <div id="playlist">
                             <h2>playlist</h2>
-        
+
                             <div class="create_new">
                                 <span><i class="fas fa-plus"></i></span> Crea Playlist
                             </div>
@@ -62,7 +69,9 @@
                             <a href="#support">Nome Playlist</a>
                             <a href="#support">Nome Playlist</a>
                         </div>
-        
+                        <!-- /playlist start -->
+
+                        <!-- profile start -->
                         <div id="profile">
                             <div class="download-app">
                                 <img src="img/download.svg" alt="download">
@@ -77,20 +86,25 @@
                                 </div>
                             </div>
                         </div>
-               
-                    </aside>
-        
-        
-                
-                
+                        <!-- /profile start -->
 
+                    </aside>
+                    <!-- /aside start -->
+
+
+
+                    <!-- main section start -->
                     <div id="section">
+
+                        <!-- upgrade section start -->
                         <div id="upgrade">
                             <span>
                                 effettua l'upgrade
                             </span>
                         </div>
+                        <!-- /upgrade section start -->
 
+                        <!-- menu list start -->
                         <div id="nav-menu">
                             <ul class="list-inline">
                                 <li>in evidenza</li>
@@ -101,12 +115,14 @@
                                 <li>scopri</li>
                             </ul>
                         </div>
+                        <!-- /menu list start -->
 
+                        <!-- recently-played start -->
                         <div id="recently-played" class="clearfix">
                             <h2 class="section_title">
                                 Recently played
                             </h2>
-                            
+
                             <div class="album">
                                 <div class="portfolio_item">
                                     <img src="img/metal_lifting.jpg" alt="metal">
@@ -156,7 +172,9 @@
                                 <h4 class="subtitle_2">Subtitle</h4>
                             </div>
                         </div>
+                        <!-- recently-played start -->
 
+                        <!-- create-for start -->
                         <div id="create-for" class="clearfix">
                             <h2 class="section_title">
                                 Creato per John Doe
@@ -180,7 +198,9 @@
                                 <h3 class="subtitle_1">Daily Mix 1</h3>
                             </div>
                         </div>
+                        <!-- /create-for start -->
 
+                        <!-- most-popular start -->
                         <div id="most-popular" class="clearfix">
                             <h2 class="section_title">
                                 Artisti più popolari
@@ -204,10 +224,15 @@
                                 <h3 class="subtitle_1">Ludovico Einaudi</h3>
                             </div>
                         </div>
+                        <!-- /most-popular start -->
                     </div>
-                </main>
+                    <!-- /main section start -->
 
+                </main>
+            
+            <!-- footer start -->
             <footer>
+                <!-- footer-left start -->
                 <div class="song_name">
                     <div class="song_name_left">
                         <img src="img/sinister.jpeg" alt="sinister">
@@ -221,11 +246,14 @@
                         <i class="far fa-folder"></i>
                     </div>
                 </div>
+                <!-- /footer-left start -->
+
+                <!-- footer-center start -->
                 <div class="song_minute">
                     <div class="song_minute_buttons">
                         <i class="fas fa-random"></i>
                         <i class="fas fa-step-backward"></i>
-                        <i class="far fa-play-circle"></i>
+                        <i class="far fa-play-circle" id="play"></i>
                         <i class="fas fa-step-forward"></i>
                         <i class="fas fa-redo-alt"></i>
                     </div>
@@ -238,6 +266,9 @@
                         <span>4:35</span>
                     </div>
                 </div>
+                <!-- /footer-center start -->
+
+                <!-- footer-right start -->
                 <div class="song_volume">
                     <i class="fas fa-list-ul"></i>
                     <i class="fas fa-desktop"></i>
@@ -247,7 +278,9 @@
                         <span class="volume_circle"></span>
                     </div>
                 </div>
+                <!-- /footer-right start -->
             </footer>
+            <!-- /footer start -->
         </div>
     </body>
 </html>

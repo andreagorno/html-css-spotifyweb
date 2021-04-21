@@ -24,12 +24,12 @@ aside {
     color: #6D6D6D;
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 /* logo */
 .logo {
     margin: 10px;
-    overflow: hidden;
 }
 #logo {
     width: 90%;
@@ -43,7 +43,6 @@ aside {
     flex-shrink: 1;
     margin: 10px;
     color: #6D6D6D;
-    overflow: hidden;
 }
 .nav-bar img {
     height: 30px;
@@ -63,15 +62,15 @@ aside {
 
 .text:hover,
 .scrollmenu a:hover,
-#playlist .create_new:hover {
+#playlist:hover .create_new {
     cursor: pointer;
     color: white;
 }
+
 /* playlist */
 #playlist {
     margin: 10px;
     flex-shrink: 1;
-    overflow: hidden;
 }
 
 #playlist h2 {
@@ -82,7 +81,6 @@ aside {
 }
 
 .scrollmenu {
-    /* height: 80%; */
     flex-grow: 1;
     flex-shrink: 1;
     overflow: auto;
@@ -178,7 +176,7 @@ aside {
     line-height: 100px;
     background-color: rgba(8, 11, 18, 0.5);
     text-align: right;
-    z-index: 111;
+    z-index: 10;
 }
 #upgrade span {
     display: inline-block;
@@ -304,13 +302,19 @@ aside {
 #most-popular .album img {
     border-radius: 50%;
 }
+#most-popular .portfolio_item {
+    border-radius: 50%;
+}
 
 /* footer */
 footer {
+    position: fixed;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     height: 100px;
     background-color: #282828;
+    z-index: 20;
 }
 .song_name,
 .song_volume {
@@ -390,8 +394,16 @@ footer {
     color: white;
     font-size: 16px;
 }
-.song_minute_buttons i:nth-child(3) {
+.song_minute_buttons i:hover {
+    cursor: pointer;
+}
+
+.song_minute_buttons #play {
     font-size: 34px;
+}
+.song_minute_buttons #play:hover {
+    transition: all 0.5s;
+    transform: scale(1.1, 1.1);
 }
 
 .song_minute_bar {
@@ -420,7 +432,8 @@ footer {
     border-radius: 10px;
     background-color: lightgray;
 }
-.minute_exact:hover {
+#volume:hover .minute_exact,
+#volume_small:hover .minute_exact {
     background-color: #1DB954;;
 }
 .volume_circle {
@@ -556,6 +569,7 @@ footer {
 
     #upgrade {
         width: calc(100% - 60px);
+        text-align: center;
     }
 
 }
@@ -564,6 +578,26 @@ footer {
     
     #profile {
         display: none;
+    }
+
+}
+
+@media all and (max-width:560px) {
+
+    footer {
+        justify-content: center;
+    }
+
+    .song_name {
+        display: none;
+    }
+
+    .song_volume {
+        display: none;
+    }
+    
+    .song_minute {
+        width: 70%;
     }
 
 }
